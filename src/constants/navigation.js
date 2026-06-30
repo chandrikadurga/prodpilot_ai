@@ -5,6 +5,7 @@ import { ROUTES } from './routes'
  */
 export const SIDEBAR_NAV_ITEMS = [
   { label: 'Dashboard', path: ROUTES.DASHBOARD, icon: 'i-lucide-layout-dashboard' },
+  { label: 'PM Academy ⭐', path: ROUTES.ACADEMY, icon: 'i-lucide-graduation-cap' },
   { label: 'Projects', path: ROUTES.PROJECTS, icon: 'i-lucide-kanban-square' },
   { label: 'PRDs', path: ROUTES.PRDS, icon: 'i-lucide-file-text' },
   { label: 'Roadmap', path: ROUTES.ROADMAP, icon: 'i-lucide-milestone' },

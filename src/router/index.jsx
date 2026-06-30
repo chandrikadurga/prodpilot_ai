@@ -21,6 +21,17 @@ import Settings from '../pages/Settings'
 import NotFound from '../pages/NotFound'
 import Components from '../pages/Components'
 
+// Import PM Academy Pages
+import AcademyDashboard from '../modules/pm-academy/pages/AcademyDashboard'
+import BooksLibrary from '../modules/pm-academy/pages/BooksLibrary'
+import PdfLibrary from '../modules/pm-academy/pages/PdfLibrary'
+import FrameworkLibrary from '../modules/pm-academy/pages/FrameworkLibrary'
+import TemplatesLibrary from '../modules/pm-academy/pages/TemplatesLibrary'
+import LearningPaths from '../modules/pm-academy/pages/LearningPaths'
+import InterviewPrep from '../modules/pm-academy/pages/InterviewPrep'
+import Bookmarks from '../modules/pm-academy/pages/Bookmarks'
+import ResourceDetails from '../modules/pm-academy/pages/ResourceDetails'
+
 /**
  * Route guard component for authenticated pages.
  */
@@ -111,6 +122,42 @@ export const router = createBrowserRouter([
       {
         path: ROUTES.SETTINGS,
         element: <Settings />,
+      },
+      {
+        path: ROUTES.ACADEMY,
+        element: <AcademyDashboard />,
+      },
+      {
+        path: ROUTES.ACADEMY_BOOKS,
+        element: <BooksLibrary />,
+      },
+      {
+        path: ROUTES.ACADEMY_PDFS,
+        element: <PdfLibrary />,
+      },
+      {
+        path: ROUTES.ACADEMY_FRAMEWORKS,
+        element: <FrameworkLibrary />,
+      },
+      {
+        path: ROUTES.ACADEMY_TEMPLATES,
+        element: <TemplatesLibrary />,
+      },
+      {
+        path: ROUTES.ACADEMY_PATHS,
+        element: <LearningPaths />,
+      },
+      {
+        path: ROUTES.ACADEMY_INTERVIEW,
+        element: <InterviewPrep />,
+      },
+      {
+        path: ROUTES.ACADEMY_BOOKMARKS,
+        element: <Bookmarks />,
+      },
+      {
+        path: ROUTES.ACADEMY_RESOURCE,
+        element: <ResourceDetails />,
       },
     ],
   },
