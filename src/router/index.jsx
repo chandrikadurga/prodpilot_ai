@@ -19,10 +19,10 @@ import Feedback from '../pages/Feedback'
 import Reports from '../pages/Reports'
 import Settings from '../pages/Settings'
 import NotFound from '../pages/NotFound'
+import Components from '../pages/Components'
 
 /**
  * Route guard component for authenticated pages.
- * Redirects user to Login if they are not authenticated.
  */
 function ProtectedRoute({ children }) {
   const { isAuthenticated } = useAuth()
@@ -31,7 +31,6 @@ function ProtectedRoute({ children }) {
 
 /**
  * Route guard component for guest-only pages (e.g. Login, Register).
- * Redirects user to Dashboard if they are already authenticated.
  */
 function GuestRoute({ children }) {
   const { isAuthenticated } = useAuth()
@@ -46,6 +45,12 @@ export const router = createBrowserRouter([
   {
     path: ROUTES.LANDING,
     element: <Landing />,
+  },
+  
+  // Design System Component Playground
+  {
+    path: ROUTES.COMPONENTS,
+    element: <Components />,
   },
   
   // Guest-only Auth Pages

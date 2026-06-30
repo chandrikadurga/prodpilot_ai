@@ -2,12 +2,13 @@ import React from 'react'
 import { cn } from '../utils/cn'
 
 /**
- * Reusable Avatar component supporting image fallbacks, initials generation, and online status badges.
+ * Reusable Avatar component supporting image fallbacks, initials generation, shapes, and online status badges.
  */
 export function Avatar({
   src,
   name = '',
-  size = 'md',
+  size = 'md', // 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+  shape = 'circle', // 'circle' | 'square'
   className = '',
   status = '', // 'online' | 'offline' | 'busy' | ''
   ...props
@@ -18,6 +19,11 @@ export function Avatar({
     md: 'w-10 h-10 text-sm',
     lg: 'w-12 h-12 text-base',
     xl: 'w-16 h-16 text-lg',
+  }
+
+  const shapes = {
+    circle: 'rounded-full',
+    square: 'rounded-lg',
   }
 
   const getInitials = (fullName) => {
@@ -34,38 +40,43 @@ export function Avatar({
       hash = str.charCodeAt(i) + ((hash << 5) - hash)
     }
     const colors = [
-      'bg-primary-500 text-white',
-      'bg-secondary-500 text-white',
-      'bg-emerald-500 text-white',
-      'bg-amber-500 text-white',
-      'bg-rose-500 text-white',
-      'bg-blue-500 text-white',
-      'bg-purple-500 text-white',
-      'bg-teal-500 text-white',
+      'bg-primary text-white',
+      'bg-accent text-white',
+      'bg-success text-white',
+      'bg-warning text-white',
+      'bg-danger text-white',
+      'bg-info text-white',
+      'bg-secondary text-white',
     ]
     const index = Math.abs(hash) % colors.length
     return colors[index]
   }
 
   const statusColors = {
-    online: 'bg-success ring-white dark:ring-neutral-900',
-    offline: 'bg-neutral-400 ring-white dark:ring-neutral-900',
-    busy: 'bg-danger ring-white dark:ring-neutral-900',
+    online: 'bg-success ring-surface',
+    offline: 'bg-text-muted ring-surface',
+    busy: 'bg-danger ring-surface',
   }
 
   return (
-    <div className="relative inline-flex select-none">
+    <div className="relative inline-flex select-none shrink-0">
       {src ? (
         <img
           src={src}
           alt={name}
-          className={cn('rounded-full object-cover border border-neutral-200/50 dark:border-neutral-700/50', sizes[size], className)}
+          className={cn(
+            'object-cover border-2 border-border',
+            shapes[shape],
+            sizes[size],
+            className
+          )}
           {...props}
         />
       ) : (
         <div
           className={cn(
-            'rounded-full flex items-center justify-center font-bold uppercase border border-neutral-200/20 dark:border-neutral-800/20',
+            'flex items-center justify-center font-bold uppercase border-2 border-border',
+            shapes[shape],
             sizes[size],
             getHashColor(name || 'User'),
             className
@@ -87,3 +98,4 @@ export function Avatar({
     </div>
   )
 }
+

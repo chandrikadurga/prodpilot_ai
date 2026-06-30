@@ -1,99 +1,104 @@
 :root {
-  /* Colors - Indigo/Violet Primary */
-  --color-primary-50: #f5f3ff;
-  --color-primary-100: #ede9fe;
-  --color-primary-200: #ddd6fe;
-  --color-primary-300: #c4b5fd;
-  --color-primary-400: #a78bfa;
-  --color-primary-500: #8b5cf6;
-  --color-primary-600: #7c3aed;
-  --color-primary-700: #6d28d9;
-  --color-primary-800: #5b21b6;
-  --color-primary-900: #4c1d95;
-  --color-primary: var(--color-primary-600);
+  /* Colors - Neo-Brutalist Retro Theme (Light Mode) */
+  --color-primary-50: #f0f3ff;
+  --color-primary-100: #e0e7ff;
+  --color-primary-200: #c7d2fe;
+  --color-primary-300: #a5b4fc;
+  --color-primary-400: #818cf8;
+  --color-primary-500: #6366f1;
+  --color-primary-600: #4f46e5;
+  --color-primary-700: #4338ca;
+  --color-primary-850: #3730a3;
+  --color-primary-900: #312e81;
+  
+  /* Semantic Retro Colors (Light Mode) */
+  --color-primary: #5850ec; /* Solid Retro Violet */
+  --color-secondary: #4b5563; /* Vintage Slate Gray */
+  --color-accent: #ff5c77; /* Coral Neon Pink */
+  --color-success: #00c897; /* Classic Arcade Emerald Green */
+  --color-warning: #ff9f1c; /* Neon Amber Orange */
+  --color-danger: #ff3366; /* Cherry Red */
+  --color-info: #00a8ff; /* Cyber Cyan Blue */
 
-  /* Colors - Rose Secondary */
-  --color-secondary-50: #fff1f2;
-  --color-secondary-100: #ffe4e6;
-  --color-secondary-200: #fecdd3;
-  --color-secondary-300: #fda4af;
-  --color-secondary-400: #fb7185;
-  --color-secondary-500: #f43f5e;
-  --color-secondary-600: #e11d48;
-  --color-secondary-700: #be123c;
-  --color-secondary-800: #9f1239;
-  --color-secondary-900: #881337;
-  --color-secondary: var(--color-secondary-600);
+  /* UI Tokens - Neo-Brutalist High Contrast (Light Mode) */
+  --color-background: #faf8f5; /* Vintage Cream background */
+  --color-surface: #ffffff;
+  --color-border: #000000; /* Solid Black thick borders */
+  --color-text-primary: #000000; /* Solid Black text */
+  --color-text-secondary: #27272a; /* Slate-800 text */
+  --color-text-muted: #71717a; /* Slate-600 */
+  --color-hover: #fffee3; /* Vintage yellow highlight on hover */
+  --color-disabled: #e4e4e7;
+  --color-disabled-text: #a1a1aa;
 
-  /* Success - Emerald */
-  --color-success-50: #ecfdf5;
-  --color-success-100: #d1fae5;
-  --color-success-500: #10b981;
-  --color-success-600: #059669;
-  --color-success: var(--color-success-600);
+  /* Spacing Scale (in px) */
+  --spacing-4: 4px;
+  --spacing-8: 8px;
+  --spacing-12: 12px;
+  --spacing-16: 16px;
+  --spacing-20: 20px;
+  --spacing-24: 24px;
+  --spacing-32: 32px;
+  --spacing-40: 40px;
+  --spacing-48: 48px;
+  --spacing-64: 64px;
+  --spacing-80: 80px;
 
-  /* Warning - Amber */
-  --color-warning-50: #fffbeb;
-  --color-warning-100: #fef3c7;
-  --color-warning-500: #f59e0b;
-  --color-warning-600: #d97706;
-  --color-warning: var(--color-warning-600);
+  /* Sharp Border Radii (Boxy) */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+  --radius-xl: 8px;
+  --radius-pill: 9999px;
 
-  /* Danger - Red/Rose */
-  --color-danger-50: #fef2f2;
-  --color-danger-100: #fee2e2;
-  --color-danger-500: #ef4444;
-  --color-danger-600: #dc2626;
-  --color-danger: var(--color-danger-600);
-
-  /* Neutrals - Slate Grays */
-  --color-neutral-50: #f8fafc;
-  --color-neutral-100: #f1f5f9;
-  --color-neutral-200: #e2e8f0;
-  --color-neutral-300: #cbd5e1;
-  --color-neutral-400: #94a3b8;
-  --color-neutral-500: #64748b;
-  --color-neutral-600: #475569;
-  --color-neutral-700: #334155;
-  --color-neutral-800: #1e293b;
-  --color-neutral-900: #0f172a;
-
-  /* Shadows */
-  --shadow-soft: 0 4px 6px -1px rgba(15, 23, 42, 0.05), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
-  --shadow-medium: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.08);
-  --shadow-hard: 0 20px 25px -5px rgba(15, 23, 42, 0.12), 0 8px 10px -6px rgba(15, 23, 42, 0.12);
-  --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.06);
-
-  /* Border Radii */
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 16px;
-  --radius-xl: 24px;
+  /* Hard Solid Shadows (Offset block shadows using currentColor) */
+  --shadow-sm: 1px 1px 0px 0px var(--color-border);
+  --shadow-md: 2px 2px 0px 0px var(--color-border);
+  --shadow-lg: 4px 4px 0px 0px var(--color-border);
+  --shadow-floating: 5px 5px 0px 0px var(--color-border);
+  --shadow-modal: 8px 8px 0px 0px var(--color-border);
+  --shadow-dropdown: 4px 4px 0px 0px var(--color-border);
+  
+  --shadow-soft: var(--shadow-sm);
+  --shadow-medium: var(--shadow-md);
+  --shadow-hard: var(--shadow-lg);
+  --shadow-glass: var(--shadow-md);
 }
 
-/* Dark Mode Variables Override */
+/* Dark Mode Variables Override - Arcade/Terminal Vibe */
 html.dark {
-  --color-primary: var(--color-primary-500);
-  --color-secondary: var(--color-secondary-500);
-  --color-success: var(--color-success-500);
-  --color-warning: var(--color-warning-500);
-  --color-danger: var(--color-danger-500);
+  /* Semantic Retro Colors (Dark Mode) */
+  --color-primary: #7f7fd7; /* Light Lavender Indigo */
+  --color-secondary: #9ca3af;
+  --color-accent: #ff758f;
+  --color-success: #00ff87; /* Glowing Neon Green */
+  --color-warning: #ffff00; /* Glowing Yellow */
+  --color-danger: #ff1a40; /* Glowing Neon Red */
+  --color-info: #00e5ff; /* Glowing Cyber Blue */
 
-  /* Inverted Neutrals for dark mode */
-  --color-neutral-50: #0f172a;
-  --color-neutral-100: #1e293b;
-  --color-neutral-200: #334155;
-  --color-neutral-300: #475569;
-  --color-neutral-400: #64748b;
-  --color-neutral-500: #94a3b8;
-  --color-neutral-600: #cbd5e1;
-  --color-neutral-700: #e2e8f0;
-  --color-neutral-800: #f1f5f9;
-  --color-neutral-900: #f8fafc;
+  /* UI Tokens (Dark Mode) */
+  --color-background: #0c0d12; /* Terminal Jet Black */
+  --color-surface: #16171d; /* Solid charcoal surface */
+  --color-border: #ffffff; /* Solid White borders */
+  --color-text-primary: #ffffff; /* Pure White text */
+  --color-text-secondary: #d4d4d8; /* Zinc-300 text */
+  --color-text-muted: #52525b; /* Zinc-600 text */
+  --color-hover: #22232a; /* Slate-800 highlight */
+  --color-disabled: #1c1d24;
+  --color-disabled-text: #3f3f46;
 
-  /* Adjust shadows for dark contexts */
-  --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
-  --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -4px rgba(0, 0, 0, 0.4);
-  --shadow-hard: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
-  --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  /* Hard Solid Shadows (Offset block shadows in dark mode) */
+  --shadow-sm: 1px 1px 0px 0px var(--color-border);
+  --shadow-md: 2px 2px 0px 0px var(--color-border);
+  --shadow-lg: 4px 4px 0px 0px var(--color-border);
+  --shadow-floating: 5px 5px 0px 0px var(--color-border);
+  --shadow-modal: 8px 8px 0px 0px var(--color-border);
+  --shadow-dropdown: 4px 4px 0px 0px var(--color-border);
+  
+  --shadow-soft: var(--shadow-sm);
+  --shadow-medium: var(--shadow-md);
+  --shadow-hard: var(--shadow-lg);
+  --shadow-glass: var(--shadow-md);
 }
+
+

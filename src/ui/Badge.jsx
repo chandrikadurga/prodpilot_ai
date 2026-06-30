@@ -2,39 +2,44 @@ import React from 'react'
 import { cn } from '../utils/cn'
 
 /**
- * Reusable badge pill component supporting solid and subtle styling variants.
+ * Reusable Badge component supporting solid and subtle styling, shapes, and semantic color variants.
  */
 export function Badge({
   children,
   className = '',
-  variant = 'primary',
+  variant = 'primary', // 'primary' | 'success' | 'warning' | 'danger' | 'neutral'
   type = 'subtle', // 'solid' | 'subtle'
+  shape = 'rounded', // 'rounded' (pill-style) | 'square' (soft rounded edges)
   ...props
 }) {
-  const styles = {
+  const variants = {
     solid: {
-      primary: 'bg-primary-600 text-white',
-      secondary: 'bg-secondary-600 text-white',
-      success: 'bg-success-600 text-white',
-      warning: 'bg-warning-600 text-white',
-      danger: 'bg-danger-600 text-white',
-      neutral: 'bg-neutral-600 text-white',
+      primary: 'bg-primary text-white border-transparent',
+      success: 'bg-success text-white border-transparent',
+      warning: 'bg-warning text-white border-transparent',
+      danger: 'bg-danger text-white border-transparent',
+      neutral: 'bg-secondary text-white border-transparent',
     },
     subtle: {
-      primary: 'bg-primary-50 text-primary-700 dark:bg-primary-950/40 dark:text-primary-300 border border-primary-200/30 dark:border-primary-800/30',
-      secondary: 'bg-secondary-50 text-secondary-700 dark:bg-secondary-950/40 dark:text-secondary-300 border border-secondary-200/30 dark:border-secondary-800/30',
-      success: 'bg-success-50 text-success-700 dark:bg-success-950/40 dark:text-success-300 border border-success-200/30 dark:border-success-800/30',
-      warning: 'bg-warning-50 text-warning-700 dark:bg-warning-950/40 dark:text-warning-300 border border-warning-200/30 dark:border-warning-800/30',
-      danger: 'bg-danger-50 text-danger-700 dark:bg-danger-950/40 dark:text-danger-300 border border-danger-200/30 dark:border-danger-800/30',
-      neutral: 'bg-neutral-100 text-neutral-700 dark:bg-neutral-800 dark:text-neutral-350 border border-neutral-200/30 dark:border-neutral-700/30',
+      primary: 'bg-primary/10 text-primary border-primary/20 dark:border-primary/10',
+      success: 'bg-success/10 text-success border-success/20 dark:border-success/10',
+      warning: 'bg-warning/10 text-warning border-warning/20 dark:border-warning/10',
+      danger: 'bg-danger/10 text-danger border-danger/20 dark:border-danger/10',
+      neutral: 'bg-surface border-border text-text-secondary',
     }
+  }
+
+  const shapes = {
+    rounded: 'rounded-pill px-2.5 py-0.5',
+    square: 'rounded-sm px-2 py-0.5',
   }
 
   return (
     <span
       className={cn(
-        'inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold select-none leading-none',
-        styles[type][variant],
+        'inline-flex items-center text-[11px] font-bold border-2 select-none leading-none tracking-wide uppercase',
+        variants[type][variant],
+        shapes[shape],
         className
       )}
       {...props}
@@ -43,3 +48,4 @@ export function Badge({
     </span>
   )
 }
+

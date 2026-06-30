@@ -13,4 +13,5 @@ export const ROUTES = {
   FEEDBACK: '/feedback',
   REPORTS: '/reports',
   SETTINGS: '/settings',
+  COMPONENTS: '/components',
 }
